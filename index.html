@@ -1,20 +1,5 @@
 <!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
 
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -66,7 +51,7 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Name &amp; Title</h3>
+          <h3>Spreadmaterial</h3>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -106,6 +91,51 @@
               <li class="mdl-menu__item">Dolor</li>
             </ul>
           </section>
+
+
+         <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>Technology</h4>
+              
+
+
+<div class="console"></div>
+
+<div class="loading">
+</div>
+
+
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Read our features</a>
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+              <li class="mdl-menu__item">Lorem</li>
+              <li class="mdl-menu__item" disabled>Ipsum</li>
+              <li class="mdl-menu__item">Dolor</li>
+            </ul>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
@@ -164,6 +194,31 @@
               <li class="mdl-menu__item">Dolor</li>
             </ul>
           </section>
+
+
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>Technology</h4>
+                Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Read our features</a>
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+              <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
+              <li class="mdl-menu__item">Lorem</li>
+              <li class="mdl-menu__item" disabled>Ipsum</li>
+              <li class="mdl-menu__item">Dolor</li>
+            </ul>
+          </section>
+
+
+          
           <section class="section--footer mdl-color--white mdl-grid">
             <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
               <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
@@ -293,5 +348,80 @@
     </div>
     <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+  
+// ID of the Google Spreadsheet
+ var spreadsheetID = "1ZZbancDuEW3N2cKgWjhn6HIvwb4_LXR-bKH_R8fXWkY";
+ 
+ // Make sure it is public or set to Anyone with link can view 
+ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/od6/public/values?alt=json";
+ 
+
+ var url3 = "https://spreadsheets.google.com/feeds/list/1C2tp5rcxZLpg1tNOjzWzeVWNkWSkWx2uxv9fGMhAmTY/od6/public/values?alt=json";
+
+
+// make JSON call to Google Data API
+$.getJSON(url3, function(data) {
+
+  // set global html variable
+  var html = '';
+
+  // build table headings
+    html += '<div style="margin-top:50px">';
+  // html += '<tr>';
+  // html += '<th>Prova</th>';
+  // html += '<th>Gender</th>';
+  // html += '<th>Class Level</th>';
+  // html += '<th>Home State</th>';
+  // html += '<th>Major</th>';
+  // html += '<th>Extra Curricular Activity</th>';
+  // html += '</tr>';
+  
+  // loop to build html output for each row
+  var entry = data.feed.entry;
+  /**
+  ** Change to descending order
+  ** for (var i = entry.length - 1; i >= 0; i -= 1) {
+   */
+  for (var i = 0; i < entry.length; i++) {
+   html += '<div>';
+
+   html += '<img style="width:100%; border-radius:6px" src="' + entry[i]['gsx$imatge']['$t'] + '">';
+
+   html += '</div><div>';
+
+
+   html += '<h3>' + entry[i]['gsx$titol']['$t'] + '</h3>';
+   html += '<p>' + entry[i]['gsx$paragraf']['$t'] + '</p>';
+    // html += '<p>' + entry[i]['gsx$homestate']['$t'] + '</p>';
+    // html += '<p>' + entry[i]['gsx$major']['$t'] + '</p>';
+    // html += '<p>' + entry[i]['gsx$extracurricularactivity']['$t'] + '</p>';
+    html += '</div>';
+  }
+ html += '</div>';
+
+  // output html
+  $('.console').html(html);
+});
+
+// loading animation
+var loading = $('.loading');
+loading.hide();
+$(document)
+  .ajaxStart(function() {
+    loading.show();
+  })
+  .ajaxStop(function() {
+    loading.hide();
+  });
+
+</script>
+
+
+
   </body>
 </html>
